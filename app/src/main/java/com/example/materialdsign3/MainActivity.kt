@@ -1,6 +1,9 @@
 package com.example.materialdsign3
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.materialdsign3.R.id.fragment_container
@@ -25,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         addFragment(homeFragment)
 
         moveToFragments()
+
+        binding.dialogButton.setOnClickListener { showDialog() }
+
     }
 
 
@@ -62,4 +68,23 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(fragment_container,fragment)
         transaction.commit()
     }
+    private fun  showDialog(){
+
+       val builder = AlertDialog.Builder(this)
+       builder.apply {
+           setTitle("Title")
+           setMessage("message")
+           setPositiveButton("yes",DialogInterface.OnClickListener { _, _ ->
+               Toast.makeText(this@MainActivity,"yes clicked",Toast.LENGTH_SHORT).show()
+           })
+           setNegativeButton("no",DialogInterface.OnClickListener { _, _ ->
+               Toast.makeText(this@MainActivity,"no clicked",Toast.LENGTH_SHORT).show()
+           })
+       }
+
+       val dialog = builder.create()
+       dialog.show()
+   }
+
+
 }
