@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         moveToFragments()
 
-        binding.dialogButton.setOnClickListener { showDialog() }
+
 
     }
 
@@ -68,23 +68,7 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(fragment_container,fragment)
         transaction.commit()
     }
-    private fun  showDialog(){
 
-       val builder = AlertDialog.Builder(this)
-       builder.apply {
-           setTitle("Title")
-           setMessage("message")
-           setPositiveButton("yes",DialogInterface.OnClickListener { _, _ ->
-               Toast.makeText(this@MainActivity,"yes clicked",Toast.LENGTH_SHORT).show()
-           })
-           setNegativeButton("no",DialogInterface.OnClickListener { _, _ ->
-               Toast.makeText(this@MainActivity,"no clicked",Toast.LENGTH_SHORT).show()
-           })
-       }
-
-       val dialog = builder.create()
-       dialog.show()
-   }
 
 
 }
