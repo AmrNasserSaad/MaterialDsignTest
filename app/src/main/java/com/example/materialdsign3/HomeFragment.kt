@@ -10,7 +10,7 @@ import android.widget.Toast.makeText
 import androidx.fragment.app.Fragment
 import com.example.materialdsign3.databinding.FragmentHomeBinding
 
-class home_fragment: Fragment() {
+class HomeFragment: Fragment() {
    private lateinit var binding : FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,10 +24,8 @@ class home_fragment: Fragment() {
         binding.dialogButton.setOnClickListener { showDialog() }
 
 
+
         return binding.root
-
-
-
     }
     private fun  showDialog(){
 
@@ -46,6 +44,8 @@ class home_fragment: Fragment() {
         val dialog = builder.create()
         dialog.show()
     }
+
+
 }
 
 

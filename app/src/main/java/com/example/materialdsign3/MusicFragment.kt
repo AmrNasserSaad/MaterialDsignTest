@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.materialdsign3.databinding.FragmentMusicBinding
 
-class music_fragment: Fragment() {
+class MusicFragment: Fragment() {
     private lateinit var binding: FragmentMusicBinding
     override fun onCreateView(
         inflater: LayoutInflater,

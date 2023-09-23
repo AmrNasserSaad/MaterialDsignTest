@@ -1,8 +1,8 @@
 package com.example.materialdsign3
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -14,9 +14,9 @@ import com.example.materialdsign3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val musicFragment = music_fragment()
-    private val homeFragment = home_fragment()
-    private val settingsFragment = settings_fragment()
+    private val musicFragment = MusicFragment()
+    private val homeFragment = HomeFragment()
+    private val settingsFragment = SettingsFragment()
 
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +34,31 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_action_bar,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+
+            R.id.refreshItem -> {
+               Toast.makeText(this, "refresh", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.SettingsItem -> {
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.aboutItem -> {
+                Toast.makeText(this, "refresh", Toast.LENGTH_SHORT).show()
+                return true
+            }
+
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     private fun moveToFragments() {
         binding.navButton.setOnItemSelectedListener { item ->

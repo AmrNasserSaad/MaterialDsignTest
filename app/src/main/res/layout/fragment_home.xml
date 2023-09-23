@@ -118,12 +118,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_dialog"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="120dp"
         tools:ignore="InvalidId" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
